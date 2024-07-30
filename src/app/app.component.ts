@@ -1,46 +1,34 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { Item } from "./item";
+import { Filter } from '../types';
+import { ItemService } from './item/item.service';
 import { ItemComponent } from "./item/item.component";
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { DomSanitizer } from '@angular/platform-browser';
+import { GITHUB_ICON } from '../svgs';
+import { NgScrollbarModule } from "ngx-scrollbar"
 
 @Component({
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [CommonModule, ItemComponent],
+  imports: [CommonModule, ItemComponent, MatButtonToggleModule, MatButtonModule, MatIconModule, MatCardModule, NgScrollbarModule],
 })
 export class AppComponent {
-  componentTitle = "My To Do List";
+  itemService = inject(ItemService)
 
-  filter: "all" | "active" | "done" = "all";
-
-  allItems = [
-    { description: "eat", done: true },
-    { description: "sleep", done: false },
-    { description: "play", done: false },
-    { description: "laugh", done: false }
-  ];
-
-  addItem(description: string) {
-    if (!description) return;
-
-    this.allItems.unshift({
-      description,
-      done: false
-    })
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIconLiteral("github", sanitizer.bypassSecurityTrustHtml(GITHUB_ICON))
   }
 
-  remove(item: Item) {
-    this.allItems.splice(this.allItems.indexOf(item), 1);
-  }
+  filter: Filter = "all"
 
-  get items() {
-    if (this.filter === "all") {
-      return this.allItems;
-    }
-    return this.allItems.filter((item) =>
-      this.filter === "done" ? item.done : !item.done
-    );
+  addItem() {
+    this.filter = "all"
+    this.itemService.addItem()
   }
 }
