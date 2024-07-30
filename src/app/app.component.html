@@ -1,29 +1,32 @@
-<div class="main">
-  <h1>{{ componentTitle }}</h1>
-  <label for="addItemInput">What would you like to do today?</label>
-  <br>
-  <input #newItem placeholder="add an item" (keyup.enter)="addItem(newItem.value); newItem.value = ''" type="text"
-    class="lg-text-input" name="addItemInput" id="addItemInput" />
-
-  <button class="btn-primary" (click)="addItem(newItem.value); newItem.value = ''" type="button">Add</button>
-
-  <div class="btn-wrapper">
-    <button class="btn btn-menu" [class.active]="filter == 'all'" (click)="filter = 'all'">
-      All
-    </button>
-
-    <button class="btn btn-menu" [class.active]="filter == 'active'" (click)="filter = 'active'">
-      To Do
-    </button>
-
-    <button class="btn btn-menu" [class.active]="filter == 'done'" (click)="filter = 'done'">
-      Done
-    </button>
-  </div>
-
-  <ul>
-    <li *ngFor="let i of items">
-      <app-item (remove)="remove(i)" [item]="i"></app-item>
-    </li>
-  </ul>
-</div>
+<main class="app-container">
+  <mat-card class="app-card">
+    <mat-card-header class="app-card-header">
+      <mat-button-toggle-group [value]="filter" (change)="filter = $event.value" class="app-filters">
+        <mat-button-toggle value="all" id="app-filter">All</mat-button-toggle>
+        <mat-button-toggle value="done" class="app-filter">Done</mat-button-toggle>
+        <mat-button-toggle value="pending" class="app-filter">Pending</mat-button-toggle>
+      </mat-button-toggle-group>
+      <button mat-icon-button>
+        <a href="http://github.com/oluwis" target="_blank" style="color: #181717">
+          <mat-icon svgIcon="github"></mat-icon>
+        </a>
+      </button>
+      <button mat-icon-button (click)="addItem()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-card-header>
+    <mat-card-content class="app-card-content">
+      @if (itemService.getItemsFiltered(filter).length === 0) {
+      <div class="app-fallback">
+        <p>There are no {{filter === "all" ? "" : filter}} to-do's here.</p>
+        <p>You can add one by clicking at the + symbol.</p>
+      </div>
+      }
+      <ng-scrollbar orientation="vertical" visibility="hover">
+        @for (item of itemService.getItemsFiltered(filter); track item.id) {
+        <app-item [item]="item"></app-item>
+        }
+      </ng-scrollbar>
+    </mat-card-content>
+  </mat-card>
+</main>
