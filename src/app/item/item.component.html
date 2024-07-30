@@ -1,30 +1,28 @@
-<div class="item">
-  <input
-    [id]="item.description"
-    type="checkbox"
-    (change)="item.done = !item.done"
-    [checked]="item.done" />
-  <label [for]="item.description">{{item.description}}</label>
+<div class="item-container">
+  <p #input [contentEditable]="isEditable" (keydown.enter)="updateItemDesc(input.textContent!)">
+    {{item.description}}</p>
 
-  <div class="btn-wrapper" *ngIf="!editable">
-    <button class="btn" (click)="editable = !editable">Edit</button>
-    <button class="btn btn-warn" (click)="remove.emit()">Delete</button>
-  </div>
+  @if (item.done) {
+  <button mat-icon-button class="item-state-button" (click)="updateItemState()">
+    <mat-icon>radio_button_checked</mat-icon>
+  </button>
+  } @else {
+  <button mat-icon-button (click)="updateItemState()">
+    <mat-icon>radio_button_unchecked</mat-icon>
+  </button>
+  }
 
-  <!-- This section shows only if user clicks Edit button -->
-  <div *ngIf="editable">
-    <input
-      class="sm-text-input"
-      placeholder="edit item"
-      [value]="item.description"
-      #editedItem
-      (keyup.enter)="saveItem(editedItem.value)" />
+  @if (isEditable) {
+  <button mat-icon-button (click)="updateItemDesc(input.textContent!)">
+    <mat-icon>save</mat-icon>
+  </button>
+  } @else {
+  <button mat-icon-button (click)="isEditable = !isEditable">
+    <mat-icon>edit</mat-icon>
+  </button>
+  }
 
-    <div class="btn-wrapper">
-      <button class="btn" (click)="editable = !editable">Cancel</button>
-      <button class="btn btn-save" (click)="saveItem(editedItem.value)">
-        Save
-      </button>
-    </div>
-  </div>
+  <button mat-icon-button class="item-delete-button" (click)="removeItem()">
+    <mat-icon>delete</mat-icon>
+  </button>
 </div>
