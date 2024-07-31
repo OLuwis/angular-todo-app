@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://files.catbox.moe/58bezp.gif">
+  <img src="https://files.catbox.moe/58bezp.gif" style="display:block; width: 60%;">
 </p>
 
 ## BR
