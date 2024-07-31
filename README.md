@@ -1,27 +1,49 @@
-# Todo
+## BR
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+### Introdução
 
-## Development server
+Este projeto foi feito para propósitos de estudo, seguindo como base o guia de Angular do [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Angular_getting_started).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O projeto segue os requisitos funcionais mínimos e também expande a estrutura básica para uma mais avançada e moderna.
 
-## Code scaffolding
+O projeto foi feito usando Angular 18+ e NodeJS 20+.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Desenvolvimento Local
 
-## Build
+1. Clone este repositório
+```sh
+git clone https://github.com/OLuwis/Angular-TodoApp.git
+```
+2. Inicie o servidor local
+```sh
+ng serve
+```
+3. Acesse o servidor no seu navegador
+```sh
+http://localhost:4200
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## EN
 
-## Running unit tests
+### Introduction
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This project was created for study purposes, based on the Angular guide from [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Angular_getting_started).
 
-## Running end-to-end tests
+The project meets the minimum functional requirements and also expands the basic structure to a more advanced and modern one.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The project was built using Angular 18+ and NodeJS 20+.
 
-## Further help
+### Local Development
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Clone this repository
+```sh
+git clone https://github.com/OLuwis/Angular-TodoApp.git
+```
+2. Start the local server
+```sh
+ng serve
+```
+3. Access the server in your browser
+```sh
+http://localhost:4200
+```
