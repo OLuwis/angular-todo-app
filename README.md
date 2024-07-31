@@ -1,7 +1,7 @@
 <p align="center" style="margin: 0;">
   <img src="https://files.catbox.moe/58bezp.gif" style="display:block; width: 60%;">
 </p>
-<h1 align="center" style="border: 0; outline: 0; margin: 0;">
+<h1 align="center" style="border-bottom: 0; margin: 0;">
   Angular-TodoApp
 </h1>
 
