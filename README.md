@@ -1,4 +1,4 @@
-<img style="display: block; float: none; margin-left: auto; margin-right: auto; width: 60%;" src="https://files.catbox.moe/58bezp.gif" alt="App Example"/>
+<img src="https://files.catbox.moe/58bezp.gif" style="display: block; float: none; margin-left: auto; margin-right: auto; width: 60%;">
 
 ## BR
 
