@@ -1,9 +1,9 @@
 <p align="center">
   <img src="https://files.catbox.moe/58bezp.gif" style="display:block; width: 60%;">
 </p>
-<h1 align="center" style="fontSize: 2rem; font-weight: bold;">
+<h3 align="center">
   Angular-TodoApp
-</h1>
+</h3>
 
 ## BR
 
