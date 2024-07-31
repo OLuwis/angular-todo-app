@@ -1,4 +1,9 @@
-<img style="display:block; margin-inline:auto; max-width:15rem; width:100%;" src="https://files.catbox.moe/58bezp.gif" alt="App Example"/>
+<p align="center">
+  <img src="https://files.catbox.moe/58bezp.gif" style="display:block; width: 50%;">
+  <h3 align="center">
+    Angular-TodoApp
+  </h3>
+</p>
 
 ## BR
 
