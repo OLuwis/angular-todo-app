@@ -1,4 +1,6 @@
-<img src="https://files.catbox.moe/58bezp.gif" style="display: block; float: none; margin-left: auto; margin-right: auto; width: 60%;">
+<p align="center">
+  <img src="https://files.catbox.moe/58bezp.gif">
+</p>
 
 ## BR
 
