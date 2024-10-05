@@ -27,7 +27,7 @@ O projeto foi feito usando Angular 18+ e NodeJS 20+.
 
 1. Clone este repositório
 ```sh
-git clone https://github.com/OLuwis/Angular-TodoApp.git
+git clone https://github.com/OLuwis/angular-todo-app.git
 ```
 2. Inicie o servidor local
 ```sh
