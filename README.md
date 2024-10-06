@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="https://files.catbox.moe/58bezp.gif" style="display:block; width: 50%;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" style="display:block; width: 50%;">
   <h3 align="center">
-    Angular-TodoApp
+    Angular Todo App
   </h3>
 </p>
 
